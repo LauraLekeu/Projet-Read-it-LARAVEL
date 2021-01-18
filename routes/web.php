@@ -40,3 +40,17 @@ use App\Http\Controllers\Posts;
        ->where('post', '[1-9][0-9]*')
        ->where('slug', '[a-z0-9][a-z0-9\-]*')
        ->name('posts.show');
+
+
+ /*
+ |--------------------------------------------------------------------------
+ | Routes des pages
+ |--------------------------------------------------------------------------
+ */
+ use App\Http\Controllers\Contacts;
+
+// CONTACT PAGE
+// PATTERN: /contact
+// CTRL: Contacts
+// ACTION: form
+  Route::get('/contact', [Contacts::class, 'form'])->name('contacts.form');
