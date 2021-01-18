@@ -11,12 +11,12 @@ class Post extends Model
 
     // GETTER de l'auteur à qui appartient ce post
     public function author(){
-      return $this->belonsTo('App\Models\Author');
+      return $this->belongsTo('App\Models\Author');
     }
 
     // GETTER de la catégorie à qui appartient ce post
     public function categorie(){
-      return $this->belonsTo('App\Models\Categorie');
+      return $this->belongsTo('App\Models\Categorie');
     }
 
     // GETTER des commentaires du post
@@ -26,6 +26,6 @@ class Post extends Model
 
     // GETTER des tags du post
     public function tags(){
-      return $this->hasMany('App\Models\Tag', 'posts_has_tags');
+      return $this->belongsToMany('App\Models\Tag', 'posts_has_tags');
     }
 }
